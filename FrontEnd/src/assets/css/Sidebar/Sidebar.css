@@ -1,0 +1,47 @@
+.nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 100%;
+    padding: 1em;
+    height: 100%;
+    background-color: rgb(15, 15, 15);
+
+    transform: translateX(1em);
+    transition: 0.2s transform;
+}
+
+nav:hover,
+nav:focus-within {
+    transform: translateX(100%);
+}
+
+.container {
+    overflow: hidden;
+    position: relative;
+
+
+
+
+}
+
+.item {
+    border-radius: 8px;
+    overflow: visible;
+    color: white;
+    margin-left: -2ch;
+    margin-right: -2ch;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    background-color: aqua;
+    transition: background-color 0.3s ease-out 10ms
+}
+
+.item:hover {
+    background-color: #c0bebf;
+}
+.p{
+    margin-left: -2rem;
+    margin-right: 100%;
+    background-color: bisque;
+}
