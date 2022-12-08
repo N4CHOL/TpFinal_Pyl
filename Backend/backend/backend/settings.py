@@ -48,6 +48,7 @@ LOCAL_APPS = [
 
 THIRD_PARTY_APPS = [
    'rest_framework',
+   'corsheaders',
 ]
 INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
@@ -60,6 +61,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = "backend.urls"
@@ -127,6 +129,23 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
+
+# Cors
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "http://localhost:3002",
+    "http://127.0.0.1:5173"
+]
+
+CORS_ORIGIN_WHITELIST = [
+     "http://localhost:8080",
+     "http://localhost:3000",
+     "http://localhost:3001",
+     "http://localhost:3002",
+     "http://127.0.0.1:5173"
+]
 
 
 # Static files (CSS, JavaScript, Images)

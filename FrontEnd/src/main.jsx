@@ -7,7 +7,8 @@ import {
   Route,
   Navigate
 } from "react-router-dom";
-import "./assets/css/bootstrap.css";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Index from "./Components/Index/Index";
 import FormNote from "./Components/Notes/FormNote";
 import ErrorPage from "./Routes/Error/404";
