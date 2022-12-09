@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { json } from 'react-router-dom'
 import * as noteServer from "../../Utilities/Services/ApiCall"
 
 
@@ -15,19 +16,19 @@ function FormNote() {
   }
 
   const [note, setNote] = useState(initialState)
-
+  var responce
 
 
 
   
 
 
-  const GetNote = async () => {
+  const GetNotes = async () => {
     try {
-      const res = await noteServer.GetNote();
-      const data = await res.json()
-      const {id, title, description} = data.note
-      setNote({id, title, description})
+      responce = await noteServer.GetNote();
+      
+      console.log(responce)
+      setNote(responce)
       
     } catch (error) {
       console.log(error)
@@ -35,10 +36,10 @@ function FormNote() {
   }
 
   useEffect(() => {
-    GetNote()
+    GetNotes()
   });
 
-  console.log(note)
+
   return (
     <div>FormNote</div>
   )
