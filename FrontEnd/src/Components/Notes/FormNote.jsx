@@ -1,47 +1,48 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { json } from 'react-router-dom'
+import {Col, Container} from "react-bootstrap"
 import * as noteServer from "../../Utilities/Services/ApiCall"
-
+import "./Note.css"
 
 
 function FormNote() {
 
-
-  const initialState = {
-    id: 0,
-    title: '',
-    description: '',
-
-  }
-
-  const [note, setNote] = useState(initialState)
+  const [note, setNote] = useState({})
   var responce
 
-
-
-  
-
-
-  const GetNotes = async () => {
+  const GetNotes =  async () => {
     try {
-      responce = await noteServer.GetNote();
-      
-      console.log(responce)
-      setNote(responce)
-      
+      responce = await noteServer.GetNote(note);
+      setNote(responce.data)
     } catch (error) {
       console.log(error)
     }
   }
+  console.log(note)
 
   useEffect(() => {
-    GetNotes()
-  });
+    GetNotes();
+  }, []);
+
+  const data = note
 
 
   return (
-    <div>FormNote</div>
+    <>
+   <h1 className='title'>Anotador</h1>
+ 
+     {Array.from(note).map((nota, index) => {
+      return(
+
+        <h1 key={index} className="user">{nota?.title}</h1>
+      )
+      
+      
+
+        
+     })}  
+   <h1 className='title'>{note.title}</h1>
+   </>
   )
 }
 

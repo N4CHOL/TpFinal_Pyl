@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
+
+from corsheaders.defaults import default_headers
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -61,7 +64,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'corsheaders.middleware.CorsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+
 ]
 
 ROOT_URLCONF = "backend.urls"
@@ -131,27 +135,29 @@ USE_I18N = True
 USE_TZ = True
 
 # Cors
-CORS_ALLOWED_ORIGINS = [
-       "http://localhost:8080",
-       "http://localhost:3000",
-       "http://localhost:3001",
-       "http://localhost:3002",
-       "http://127.0.0.1:5173",
+# CORS_ALLOWED_ORIGINS = [
+#        "http://localhost:8080",
+#        "http://localhost:3000",
+#        "http://localhost:3001",
+#        "http://localhost:3002",
+#        "http://127.0.0.1:5173",
 
-   ]
-CORS_ORIGIN_ALLOW_ALL = False
+#    ]
+# CORS_ORIGIN_ALLOW_ALL = False
 
-CORS_ORIGIN_WHITELIST = [
-        "http://localhost",
-        "http://localhost:3000",
-        "http://localhost:3001",
-        "http://localhost:3002",
-        "http://127.0.0.1:5173",
+# CORS_ORIGIN_WHITELIST = [
+#         "http://localhost",
+#         "http://localhost:3000",
+#         "http://localhost:3001",
+#         "http://localhost:3002",
+#         "http://127.0.0.1:5173",
        
-   ]
+#    ]
 
-
-
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_HEADERS = default_headers + (
+    'Access-Control-Allow-Origin',
+)
 # ALLOWED_HOSTS=['http://127.0.0.1:5173']
 
 
