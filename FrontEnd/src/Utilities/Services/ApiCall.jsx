@@ -1,7 +1,7 @@
 import axios from "axios"
 const GET = `http://localhost:8000/note/note-list`
 const POST = `http://localhost:8000/note/create-note/`
-const PUT = `http://localhost:8000/note/detail-note`
+const PUT = `http://localhost:8000/note/detail-note/`
 
 export const notegetter = async () => {
     return await fetch(GET)
@@ -9,7 +9,7 @@ export const notegetter = async () => {
 
 
 
-
+//  Llamar notas
  export const GetNote = async () => {
      return await axios.get(`${GET}`, {
          headers: {
@@ -26,7 +26,7 @@ export const notegetter = async () => {
  };
 
 
-
+//  Postear Nota
  export const PostNote = async (data) => {
     return await axios.post(`${POST}`,data, {
         headers: {
@@ -42,16 +42,13 @@ export const notegetter = async () => {
     });
 };
 
-
+//  Ver nota
 export const ViewNote = async (id) => {
-    return await axios.get(`${PUT}/${id}`, {
+    return await axios.get(`${PUT}${id}`, {
         headers: {
             'authorization': ' xxxxxxxxxx',
-           
-
         }
     }
-
     ).then(response => {
        
         return response
@@ -59,8 +56,10 @@ export const ViewNote = async (id) => {
 };
 
 
+
+//  Editar Nota
 export const PutNote = async (data,id) => {
-    return await axios.put(`${PUT}/${id}`,data, {
+    return await axios.put(`${PUT}${id}`,data, {
         headers: {
             'authorization': ' xxxxxxxxxx',
            
@@ -69,7 +68,32 @@ export const PutNote = async (data,id) => {
     }
 
     ).then(response => {
-       
+        console.log(response)
         return response
+        
+    });
+};
+
+
+
+
+
+
+
+
+//  Borrar Nota
+export const DelNote = async (id) => {
+    return await axios.delete(`${PUT}${id}`, {
+        headers: {
+            'authorization': ' xxxxxxxxxx',
+           
+
+        }
+    }
+
+    ).then(response => {
+        window.location.reload()
+        return response
+       
     });
 };

@@ -38,6 +38,7 @@
 }
 
 .input{
+    margin-left: 15%;
     background-color: #ced0d4;
     font-family: 'Roboto', sans-serif;
     color: rgb(255, 255, 255);
@@ -49,15 +50,61 @@
     display: block;
     max-height: 22ch;
 }
+.textarea{
+    margin-left: 15%;
+    background-color: #ced0d4;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(255, 255, 255);
+    padding-bottom: 300px;
+    font-size: 30px;
+    width: 70%;
+    border: 0ch;
+    border-radius: 4px;
+    margin-top: 0.5%;
+    display: block;
+   
+}
 
 
 .form{
     width: 100%;
     border-radius: 10px;
-    padding-bottom: 10rem;
-    background-color: #696969;
+    padding-bottom: 5rem;
+    background-color: #adacac;
 }
 
 .link{
     background-color: aqua;
+}
+
+.spantitle{
+    background-color: aliceblue;
+    padding-right: 20px;
+    padding-right: 20px;
+    border-radius: 4px;
+    
+    margin-left: 15%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    
+    
+}
+
+.sendBtn{
+    margin-top: 2%;
+    font-family: 'Roboto', sans-serif;
+    border: 0ch;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 45%;
+    background-color: aqua;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.sendBtn:hover{
+    background-color: aliceblue;
+    zoom: 1.1;
 }

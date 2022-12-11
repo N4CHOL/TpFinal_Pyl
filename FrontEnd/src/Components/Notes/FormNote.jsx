@@ -54,8 +54,8 @@ function FormNote() {
         <Collapse in={state[index]}>
         <div className='div' key={index}> <textarea className='input' value={nota?.description} readOnly></textarea> 
     
-         <button className='item' onClick={(e => navigate(`/app/edit-note/${nota?.id}`))}><p className=''>Editar Nota</p>  </button>
-        
+         <button className='item' onClick={(e => navigate(`/app/edit-notes/${nota?.id}`))}><p className=''>Editar Nota</p>  </button>
+         <button className='item' onClick={(e) => noteServer.DelNote(nota?.id)}><p className=''>Borrar Nota</p>  </button>
         </div>
 
         </Collapse>

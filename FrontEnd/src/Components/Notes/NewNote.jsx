@@ -25,13 +25,13 @@ function NewNote() {
 
         <div className='form'> 
         <Col>
-        <span>Titulo</span>
-        <input onChange={(e)=>setTitle(e.target.value)} value={title}/>
-        <span>Descripcion</span>
-        <textarea onChange={(e)=>setDescription(e.target.value)} value={description}/>
+        <span className='spantitle'>Titulo</span>
+        <input className='input' onChange={(e)=>setTitle(e.target.value)} value={title}/>
+        <span  className='spantitle'>Descripcion</span>
+        <textarea className='textarea'onChange={(e)=>setDescription(e.target.value)} value={description}/>
         </Col>
         
-        <button onClick={(e)=>enviar(e)}>Enviar</button>
+        <button className='sendBtn' onClick={(e)=>enviar(e)}>Enviar</button>
         </div>
     
     </>
