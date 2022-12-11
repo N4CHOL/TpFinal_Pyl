@@ -13,6 +13,8 @@ import Index from "./Components/Index/Index";
 import FormNote from "./Components/Notes/FormNote";
 import ErrorPage from "./Routes/Error/404";
 import Admin from "./Routes/Layout/Admin";
+import CreateNote from "./Routes/Layout/Views/CreateNote";
+import EditNotes from "./Routes/Layout/Views/EditNotes";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,16 @@ const router = createBrowserRouter([
          element: <FormNote />,
          errorElement: <ErrorPage/>,
        },
+       {
+        path: "app/create-note",
+        element: <CreateNote />,
+        errorElement: <ErrorPage/>,
+      },
+      {
+        path: "app/edit-note/:id",
+        element: <EditNotes />,
+        errorElement: <ErrorPage/>,
+      },
      ],
   },
 

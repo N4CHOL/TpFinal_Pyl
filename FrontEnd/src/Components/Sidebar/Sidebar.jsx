@@ -18,6 +18,7 @@ function Sidebar() {
         <h1>Note Taker</h1>
         <button className='item' onClick={(e => navigate("/app/index"))}><p className='p'>Cargar Nota</p>  </button>
         <button className='item' onClick={(e => navigate("/app/note"))}><p className='p'>Cargar Nota</p></button>
+        <button className='item' onClick={(e => navigate("/app/create-note"))}><p className='p'>Nueva Nota</p></button>
         </nav>
       </nav>
 

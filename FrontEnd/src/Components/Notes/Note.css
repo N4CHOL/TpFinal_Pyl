@@ -1,4 +1,15 @@
+:root{
+    
+    background-color: #212529;
+}
+
+.div{
+    background-color: #212529;
+}
+
 .title{
+    
+    margin-top: 1%;
     justify-content: center;
     border-radius: 20px;
    
@@ -6,5 +17,47 @@
     font-weight: 600;
     font-size: 70px;
     display: flex   ;
+    background-color: aqua;
+}
+.center{
+    align-self: center;
+
+
+}
+.button{
+
+    width: 100%;
+    border: 0ch;
+    border-radius: 8px;
+    margin-top: 2%;
+    display: block;
+    transition: 1s;
+}
+.button:hover{
+    background-color: aqua;
+}
+
+.input{
+    background-color: #ced0d4;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    width: 70%;
+    border: 0ch;
+    border-radius: 4px;
+    margin-top: 0.5%;
+    display: block;
+    max-height: 22ch;
+}
+
+
+.form{
+    width: 100%;
+    border-radius: 10px;
+    padding-bottom: 10rem;
+    background-color: #696969;
+}
+
+.link{
     background-color: aqua;
 }
