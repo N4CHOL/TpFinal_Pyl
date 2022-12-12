@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils.timezone import now
 # Create your models here.
 
 
@@ -21,7 +21,13 @@ class Note(models.Model):
         verbose_name = 'descripcion'
     )
 
-    # CREATION_DATE = models.DateField()
-    # CLOSING_DATE = models.DateField()
+    state = models.CharField(
+        max_length = 500,
+        unique = False,
+        verbose_name = 'state'
+    )
+
+    CREATION_DATE = models.DateTimeField(default=now, editable=False)
+    CLOSING_DATE = models.DateField()
 
    

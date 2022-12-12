@@ -19,14 +19,15 @@ function NewNote() {
 
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
-
+  const [state, setState] = useState("")
+  const [date, setDate] = useState("")
 
 
   const enviar = async () => {
     if (title != "" && description != "") {
-      await PostNote({ title: title, description: description })
+      await PostNote({ title: title, description: description, state: state, CLOSING_DATE:date })
         .then(r => {
-          SuccessToast("Nota Editada Correctamente")
+          SuccessToast("Nota Creada Correctamente")
           setTimeout(function () {
             navigate("/app/note");
           }, 1000);
@@ -40,7 +41,7 @@ function NewNote() {
       })
     }
   }
-
+  console.log(state)
   return (
     <>
       <h1 className='title'>Cargar Nueva Nota</h1>
@@ -51,8 +52,17 @@ function NewNote() {
           <input className='input' onChange={(e) => setTitle(e.target.value)} value={title} />
           <span className='spantitle'>Descripcion</span>
           <textarea className='textarea' onChange={(e) => setDescription(e.target.value)} value={description} />
+          <span className='spancreate'>Estado</span>
+          <select className='selectcreate' value={state} onChange={(e) => setState(e.target.value)} >
+            <option disabled></option>
+            <option>Pendiente</option>
+            <option>En Proceso</option>
+            <option>Finalizado</option>
+          </select>
+          <span className='spancreate'>Fecha Limite</span>
+          <input  className='datecreate' type="date"  onChange={(e) => setDate(e.target.value)} value={date}/>
         </Col>
-
+        
         <button className='sendBtn' onClick={(e) => enviar(e)}>Enviar</button>
       </div>
 

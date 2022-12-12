@@ -78,7 +78,7 @@
 }
 
 .spantitle{
-    background-color: aliceblue;
+
     padding-right: 20px;
     padding-right: 20px;
     border-radius: 4px;
@@ -91,6 +91,7 @@
 }
 
 .sendBtn{
+    display: block;
     margin-top: 2%;
     font-family: 'Roboto', sans-serif;
     border: 0ch;
@@ -110,6 +111,7 @@
 }
 
 .boton{
+    
     display: inline;
     margin-top: 2%;
     font-family: 'Roboto', sans-serif;
@@ -148,4 +150,74 @@
     flex-direction: row;
    display: inline;
    
+}
+
+
+.datecreate{
+    margin-left: 15%;
+    width: 25%;
+    border: 0ch;
+    
+}
+
+.selectcreate{
+    margin-top: 5px;
+    margin-left: 15%;
+    width: 25%;
+    border: 0ch;
+}
+.spancreate{
+    margin-top: 2%;
+    margin-left: 15%;
+ 
+    display: block;
+}
+.state1{
+    width: 10%;
+    display: block;
+    font-size: larger;
+    font-weight: 600;
+    border-radius: 11px;
+    padding: 10px;
+    background-color: rgba(0, 255, 136, 0.877);
+}
+.state2{
+    width: 10%;
+    display: block;
+    font-size: larger;
+    font-weight: 600;
+    border-radius: 11px;
+    padding: 10px;
+    background-color: rgba(238, 252, 39, 0.877);
+}
+.state3{
+    width: 10%;
+    display: block;
+    font-size: larger;
+    font-weight: 600;
+    border-radius: 11px;
+    padding: 10px;
+    background-color: rgba(0, 132, 255, 0.877);
+}
+.dateshow{
+   
+    font-weight: 800;
+    width: 15%;
+    padding-left: 2%;
+    border-top-right-radius: 10px;
+
+    
+    font-size: 23px;
+    display: inline-block;
+    background-color: azure;
+}
+.spanshow{
+    
+    font-weight: 800;
+    width: 13%;
+    padding-left: 1%;
+    border-bottom-left-radius: 10px;
+    font-size: 23px;
+    display: inline-block;
+    background-color: aqua;
 }

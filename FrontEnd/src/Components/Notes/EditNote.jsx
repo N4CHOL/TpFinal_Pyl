@@ -15,6 +15,8 @@ function EditNote() {
   const [note, setNote] = useState({})
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
+  const [state, setState] = useState("")
+  const [date, setDate] = useState("")
   var responce
 
    const GetNote = async () => {
@@ -22,6 +24,8 @@ function EditNote() {
        responce = await noteServer.ViewNote(id);
        setTitle(responce.data.title)
        setDescription(responce.data.description)
+       setState(responce.data.state)
+       setDate(responce.data.CLOSING_DATE)
     } catch (error) {
       console.log(error)
      }
@@ -38,7 +42,7 @@ function EditNote() {
 
   const enviar = async () => {
     if (title != "" && description != ""){
-    await noteServer.PutNote({ title: title, description: description },id)
+    await noteServer.PutNote({ title: title, description: description,state: state, CLOSING_DATE:date },id)
       .then(r => {
         SuccessToast("Nota Editada Correctamente")
         setTimeout(function () {
@@ -68,6 +72,15 @@ function EditNote() {
           <input className='input' onChange={(e) => setTitle(e.target.value)} value={title}/>
           <span className='spantitle'>Descripcion</span>
           <textarea className='textarea' onChange={(e) => setDescription(e.target.value)}  value={description}/>
+          <span className='spancreate'>Estado</span>
+          <select className='selectcreate' value={state} onChange={(e) => setState(e.target.value)} >
+            <option disabled></option>
+            <option>Pendiente</option>
+            <option>En Proceso</option>
+            <option>Finalizado</option>
+          </select>
+          <span className='spancreate'>Fecha Limite</span>
+          <input  className='datecreate' type="date"  onChange={(e) => setDate(e.target.value)} value={date}/>
         </Col>
 
         <button className='sendBtn' onClick={(e) => enviar(e)}>Guardar</button>

@@ -62,6 +62,12 @@ function FormNote() {
               <div className='div' key={index}>
               <div className='col'>
               <textarea className='texdisplay' value={nota?.description} readOnly></textarea>
+              <span className='spanshow'>Fecha Limite:</span>
+              <span className='dateshow'>{nota.CLOSING_DATE}</span>
+              {nota.state == "En Proceso" && <><span className='state1'>En Proceso</span></>}
+              {nota.state == "Pendiente" && <><span className='state2'>Pendiente</span></>}
+              {nota.state == "Finalizado" && <><span className='state3'>Finalizada</span></>}
+
               </div>
               <div className='col'>
               <button className='boton' color='info' onClick={(e => navigate(`/app/edit-notes/${nota?.id}`))}>
