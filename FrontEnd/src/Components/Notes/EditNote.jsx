@@ -1,14 +1,16 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
 import { Col } from 'react-bootstrap'
-import { useParams } from 'react-router-dom'
+import { useParams,useNavigate } from 'react-router-dom'
 import * as noteServer from "../../Utilities/Services/ApiCall"
-
+import Swal from 'sweetalert2'
 import "./Note.css"
+import { SuccessToast } from '../../Utilities/Toast'
+
 function EditNote() {
 
 
-
+  const navigate = useNavigate()
   let { id } = useParams();
   const [note, setNote] = useState({})
   const [title, setTitle] = useState("")
@@ -31,28 +33,44 @@ function EditNote() {
      GetNote();
    }, []);
 
+
+
+
   const enviar = async () => {
+    if (title != "" && description != ""){
     await noteServer.PutNote({ title: title, description: description },id)
       .then(r => {
-
+        SuccessToast("Nota Editada Correctamente")
+        setTimeout(function () {
+          
+          navigate("/app/note");
+        }, 1000);
       })
+    }else{
+      Swal.fire({
+        title: 'Error!',
+        text: 'Todos los campos son obligatorios',
+        icon: 'error',
+        confirmButtonText: 'Cerrar'
+      })
+    }
    };
 
 
   return (
     <>
       
-       <h1 className='title'>Cargar Nueva Nota</h1>
+       <h1 className='title'>Editar Nota</h1>
 
       <div className='form'>
         <Col>
-          <span>Titulo</span>
-          <input onChange={(e) => setTitle(e.target.value)} value={title}/>
-          <span>Descripcion</span>
-          <textarea onChange={(e) => setDescription(e.target.value)}  value={description}/>
+          <span className='spantitle'>Titulo</span>
+          <input className='input' onChange={(e) => setTitle(e.target.value)} value={title}/>
+          <span className='spantitle'>Descripcion</span>
+          <textarea className='textarea' onChange={(e) => setDescription(e.target.value)}  value={description}/>
         </Col>
 
-        <button onClick={(e) => enviar(e)}>Enviar</button>
+        <button className='sendBtn' onClick={(e) => enviar(e)}>Guardar</button>
       </div> 
     </>
   )

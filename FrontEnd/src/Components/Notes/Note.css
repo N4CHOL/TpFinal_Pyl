@@ -41,7 +41,7 @@
     margin-left: 15%;
     background-color: #ced0d4;
     font-family: 'Roboto', sans-serif;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 30px;
     width: 70%;
     border: 0ch;
@@ -54,7 +54,7 @@
     margin-left: 15%;
     background-color: #ced0d4;
     font-family: 'Roboto', sans-serif;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     padding-bottom: 300px;
     font-size: 30px;
     width: 70%;
@@ -107,4 +107,45 @@
 .sendBtn:hover{
     background-color: aliceblue;
     zoom: 1.1;
+}
+
+.boton{
+    display: inline;
+    margin-top: 2%;
+    font-family: 'Roboto', sans-serif;
+    border: 0ch;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 1%;
+    background-color: aqua;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+  
+}
+.boton:hover{
+    zoom: 1.1;
+}
+
+.texdisplay{
+    
+    background-color: #ced0d4;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(0, 0, 0);
+    padding-bottom: 300px;
+    font-size: 30px;
+    width: 70%;
+    border: 0ch;
+    border-radius: 4px;
+    margin-top: 0.5%;
+    display: block;
+   
+}
+
+.col{
+    
+    flex-direction: row;
+   display: inline;
+   
 }

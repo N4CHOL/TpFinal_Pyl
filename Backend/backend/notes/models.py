@@ -16,7 +16,7 @@ class Note(models.Model):
 
     #   Atributos
     description = models.CharField(
-        max_length = 500,
+        max_length = 14000,
         unique = False,
         verbose_name = 'descripcion'
     )
