@@ -5,18 +5,20 @@ function FormLogin() {
     <>
     <h1 className='logintitle'>Proyecto Final Integrador </h1>
     <h1 className='loginsub'>Anotador! </h1>
-        <div className='formloguin'>
+   
 
        
-        <div className='form'>
+        <div className='formlog'>
             <span className='loginspan'>Nombre de Usuario</span>
-            <input/>
+            <input className='logininput'/>
             <span className='loginspan'>Contraseña</span>
-            <input/>
+            <input className='logininput'/>
 
-            <a className='a' href='/app/auth/register'>crear cuenta</a>
+            <button className='buttonlog'>Ingresar</button>
+
+            <a className='alog' href='/app/auth/register'>crear cuenta</a>
         </div>
-        </div>
+
 
     </>
 

@@ -11,6 +11,7 @@ import Index from "../Components/Index/Index.jsx"
 import EditNote from "../Components/Notes/EditNote";
 import LoginLayout from "./Layout/LoginLayout";
 import Login from "./Layout/Views/Login";
+import Register from "./Layout/Views/Register";
 
 
 var router = createBrowserRouter([
@@ -53,6 +54,11 @@ var router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "register",
+        element: <Register />,
         errorElement: <ErrorPage />,
       },
     ]
