@@ -1,12 +1,25 @@
-#   Django imports
-from django.contrib import admin
-from django.urls import path, include
-
-#   Views 
+# Django imports
+from django.urls import path
 
 
-#   Urls
+# Views imports
+from users.views import (
+    user_api_view,
+    user_detail_view
+    
+)
 
+
+# Urls
 urlpatterns = [
- 
+    path(
+        'user/',
+        user_api_view,
+        name='usuario_api_view'
+    ),
+    path(
+        'user/<int:pk>/',
+        user_detail_view,
+        name='user_detail_api_view'
+    )
 ]
