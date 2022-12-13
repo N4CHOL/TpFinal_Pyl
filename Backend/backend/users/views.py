@@ -2,7 +2,7 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-
+from rest_framework.views import APIView
 
 # Serializers imports
 from users.serializers import (
@@ -10,29 +10,31 @@ from users.serializers import (
     UserListSerializer
 )
 
-
+# Helper Imports
+from users.helpers.helpers import userExists
 # Models imports
 from users.models import User
 
 
 # Views
-@api_view(['GET', 'POST'])
-def user_api_view(request):
+
+class UserApiView(APIView):
+
     """
     Listar y crear usuarios.
     """
 
     # List
-    if request.method == 'GET':
+    def get(self, request):
+
         users = User.objects.all().values('id', 'username', 'email', 'password')
         users_serializer = UserListSerializer(users, many=True)
 
-        return Response(data=users_serializer.data,status=status.HTTP_200_OK)
+        return Response(data=users_serializer.data, status=status.HTTP_200_OK)
 
     # Create
-    elif request.method == 'POST':
+    def post(self, request):
         user_serializer = UserSerializer(data=request.data)
-
         # Validación
         if user_serializer.is_valid():
 
@@ -43,30 +45,39 @@ def user_api_view(request):
         return Response(user_serializer.errors)
 
 
-@api_view(['GET', 'PUT', 'DELETE'])
-def user_detail_view(request, pk):
+
+
+
+class UserDetailApiView(APIView):
     """
     Detallar, actualizar y eliminar un usuario.
     """
-
+  
     # Validacion
-    try:
-        user = User.objects.get(id=pk)
-
-    except:
-        return Response(
-            {'message': 'Usuario no encontrado'},
-            status=status.HTTP_400_BAD_REQUEST
-        )
+   
 
     # Detail
-    if request.method == 'GET':
-        user_serializer = UserSerializer(user)
+    def get(self, request, pk):
+        try:
+            user = User.objects.get(id=pk)
+            user_serializer = UserSerializer(user)
+            return Response(user_serializer.data)
+        except:
+            data = {
+                'message' : 'Coldnt access user data'
+                }
+        return Response(
+            data= data,
+            status=status.HTTP_400_BAD_REQUEST
+        )   
+        
 
-        return Response(user_serializer.data)
+        
 
     # Update
-    elif request.method == 'PUT':
+    def put(self, request, pk):
+        validacion, user = userExists(pk)
+
         user_serializer = UserSerializer(user, data=request.data)
 
         if user_serializer.is_valid():
@@ -75,9 +86,10 @@ def user_detail_view(request, pk):
             return Response(data=user_serializer.data)
 
         return Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+
     # Delete
-    elif request.method == 'DELETE':
+    def delete(self, pk):
+        user = User.objects.get(id=pk)
         user.delete()
 
         return Response(

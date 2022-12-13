@@ -1,7 +1,17 @@
 import axios from "axios"
+import { useState } from "react"
+
+
 const GET = `http://localhost:8000/note/note-list`
 const POST = `http://localhost:8000/note/create-note/`
 const PUT = `http://localhost:8000/note/detail-note/`
+
+
+
+
+// User
+const USERGET = "http://localhost:8000/user/user/";
+const USERGETLIST = "http://localhost:8000/user/user-list/";
 
 export const notegetter = async () => {
     return await fetch(GET)
@@ -95,5 +105,26 @@ export const DelNote = async (id) => {
         window.location.reload()
         return response
        
+    });
+};
+
+
+
+
+
+//  Llamar notas
+export const GetUserList = async () => {
+   
+    return await axios.get(`${USERGETLIST}`, {
+        headers: {
+            'authorization': ' xxxxxxxxxx',
+           
+
+        }
+    }
+
+    ).then(response => {
+       
+        return response
     });
 };

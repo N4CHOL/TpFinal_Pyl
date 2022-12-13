@@ -9,6 +9,7 @@ import {
 
 
 import "../../assets/css/Sidebar/Sidebar.css"
+import authService from '../../Utilities/Services/auth.service';
 
 function Sidebar() {
 
@@ -69,7 +70,7 @@ function Sidebar() {
 
 
 
-        <button className='item' onClick={(e => navigate("/app/auth/login"))}>login
+        <button className='item' onClick={(e =>authService.logout())}>Cerrar Sesion
         <FontAwesomeIcon
                   className='itemnavicon'
                     icon="fa-solid fa-plus"

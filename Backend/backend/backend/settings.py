@@ -105,7 +105,7 @@ DATABASES = {
      }
 }
 
-WSGI_APPLICATION = 'backend.wsgi.application'
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 

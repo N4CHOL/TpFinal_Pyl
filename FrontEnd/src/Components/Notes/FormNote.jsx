@@ -40,7 +40,7 @@ function FormNote() {
     GetNotes();
   }, []);
 
-  const data = note
+  
 
   const navigate = useNavigate()
   return (

@@ -91,7 +91,7 @@ class NoteDetailApiView(APIView):
     
     
     def get(self, request, pk):
-        "devuelve informacion de un heroe"
+        "devuelve informacion de una nota"
         try:
             notes = Note.objects.get(pk=pk)
 
@@ -102,7 +102,7 @@ class NoteDetailApiView(APIView):
                 )
         except:
              data= {
-                'message' : 'Coulnt access hero data'
+                'message' : 'Coulnt access note data'
             }
         return Response(
             data=data,
