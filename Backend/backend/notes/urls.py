@@ -2,7 +2,7 @@
 from django.urls import path    
 
 #   Views 
-from notes.views import (NoteApiView,CreateNoteApiView,NoteDetailApiView, note_api_view)
+from notes.views import (NoteApiView,CreateNoteApiView,NoteDetailApiView,)
 
 #   Urls
 

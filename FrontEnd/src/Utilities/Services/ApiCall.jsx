@@ -12,6 +12,7 @@ const PUT = `http://localhost:8000/note/detail-note/`
 // User
 
 const USERGETLIST = "http://localhost:8000/user/user-list/";
+const DELUSER = " http://127.0.0.1:8000/user/user/";
 
 export const notegetter = async () => {
     return await fetch(GET)
@@ -24,7 +25,7 @@ export const notegetter = async () => {
      return await axios.get(`${GET}`, {
          headers: {
              'authorization': ' xxxxxxxxxx',
-            
+             'Access-Control-Allow-Origin':'*'
 
          }
      }
@@ -146,16 +147,13 @@ export const PostUser = async (data) => {
     });
 };
 
+//  Delete User
+
 export const DelUser = async (id) => {
-    return await axios.delete(`${USERGETLIST}${id}`, {
-        headers: {
-            'authorization': ' xxxxxxxxxx',
-        }
-    }
+    return await axios.delete(`${DELUSER}${id}`,
 
     ).then(response => {
         window.location.reload()
         return response
-       
-    });
+})
 };

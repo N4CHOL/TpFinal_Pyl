@@ -71,7 +71,7 @@ nav:focus-within {
   }
   .itemnavicon{
     position: absolute;
-    margin-left: 57%;
+    margin-left: 62%;
     font-size: 30px;
   }
 
@@ -89,9 +89,9 @@ nav:focus-within {
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     color: black;
-    margin-left: -2ch;
-    margin-right: -1.8ch;
-    padding-left: 2rem;
+    margin-left: -1ch;
+    margin-right: 2ch;
+    padding-left: 1.9rem;
     padding-right: rem;
     background-color: aqua;
     transition: background-color 0.3s ease-out 10ms

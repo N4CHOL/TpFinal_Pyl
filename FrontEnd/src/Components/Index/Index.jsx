@@ -5,7 +5,7 @@ function Index() {
   return (
     <>
     <h1>asdasdasd</h1>
-    <button color='danger' className='btn-danger'>asdads</button>
+    <img src='../../public/images/empty.jpg'></img>
     </>
   )
 }

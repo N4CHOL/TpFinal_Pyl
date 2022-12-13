@@ -157,9 +157,9 @@ USE_TZ = True
 #    ]
 
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_HEADERS = default_headers + (
-    'Access-Control-Allow-Origin',
-)
+# CORS_ALLOW_HEADERS = default_headers + (
+#     'Access-Control-Allow-Origin',
+# )
 # ALLOWED_HOSTS=['http://127.0.0.1:5173']
 
 
@@ -169,7 +169,7 @@ CORS_ALLOW_HEADERS = default_headers + (
 
 # CORS_ALLOW_ALL_ORIGINS = True # If this is used then `CORS_ALLOWED_ORIGINS` will not have any effect
 # CORS_ALLOW_CREDENTIALS = True
-# ALLOWED_HOSTS=['*']
+ALLOWED_HOSTS=['*']
 
 
 
