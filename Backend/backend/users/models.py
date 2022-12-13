@@ -9,7 +9,7 @@ class UserAdmin(BaseUserManager):
             email = email,
             name = name,
             last_name = last_name,
-       
+            password = password,
             **extra_fields
         )
         user.set_password(password)

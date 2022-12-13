@@ -38,11 +38,16 @@ const logout = () => {
     window.location.reload()
 
 };
+
+
+
+
 const authService = {
     login,
     getCurrentUser,
     logout
 };
+
 
 
 export default authService;

@@ -79,8 +79,8 @@ function FormLogin() {
             <div className='formlog'>
                 <span className='loginspan'>Nombre de Usuario</span>
                 <input className='logininput' value={username} onChange={(e) => setUsername(e.target.value)} />
-                <span className='loginspan'>Contraseña</span>
-                <input className='logininput' value={password} onChange={(e) => setPassword(e.target.value)} />
+                <span className='loginspan' >Contraseña</span>
+                <input type="password"  className='logininput' value={password} onChange={(e) => setPassword(e.target.value)} />
 
                 <button className='buttonlog' onClick={(e) => handleLogin(e)}>Ingresar</button>
 

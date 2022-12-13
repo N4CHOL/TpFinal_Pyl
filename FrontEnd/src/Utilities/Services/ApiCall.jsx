@@ -10,7 +10,7 @@ const PUT = `http://localhost:8000/note/detail-note/`
 
 
 // User
-const USERGET = "http://localhost:8000/user/user/";
+
 const USERGETLIST = "http://localhost:8000/user/user-list/";
 
 export const notegetter = async () => {
@@ -126,5 +126,36 @@ export const GetUserList = async () => {
     ).then(response => {
        
         return response
+    });
+};
+
+
+//  Postear Nota
+export const PostUser = async (data) => {
+    return await axios.post(`${USERGETLIST}`,data, {
+        headers: {
+            'authorization': ' xxxxxxxxxx',
+           
+
+        }
+    }
+
+    ).then(response => {
+       
+        return response
+    });
+};
+
+export const DelUser = async (id) => {
+    return await axios.delete(`${USERGETLIST}${id}`, {
+        headers: {
+            'authorization': ' xxxxxxxxxx',
+        }
+    }
+
+    ).then(response => {
+        window.location.reload()
+        return response
+       
     });
 };

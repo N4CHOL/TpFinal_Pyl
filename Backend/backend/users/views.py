@@ -88,7 +88,7 @@ class UserDetailApiView(APIView):
         return Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     # Delete
-    def delete(self, pk):
+    def delete(self, request, pk):
         user = User.objects.get(id=pk)
         user.delete()
 

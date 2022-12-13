@@ -11,15 +11,15 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = '__all__'
 
-    def create(self, validated_data):
-        """
-        Correción la encriptacion de la password al crear un usuario.
-        """
-        user = User(**validated_data)
-        user.set_password(validated_data['password'])
-        user.save()
+    # def create(self, validated_data):
+    #     """
+    #     Correción la encriptacion de la password al crear un usuario.
+    #     """
+    #     user = User(**validated_data)
+    #     user.set_password(validated_data['password'])
+    #     user.save()
 
-        return user
+    #     return user
     
 
     def update(self, instance, validated_data):
