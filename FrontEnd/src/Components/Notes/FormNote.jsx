@@ -6,11 +6,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 import "./Note.css"
-
+import authService from '../../Utilities/Services/auth.service';
 
 function FormNote() {
   //  Icono
   library.add(faPenToSquare,faTrash);
+  const user = authService.getCurrentUser()
 
   const [note, setNote] = useState({})
   const [state, setState] = useState(false);
@@ -25,10 +26,10 @@ function FormNote() {
 
 
   var responce
-
+  
   const GetNotes = async () => {
     try {
-      responce = await noteServer.GetNote(note);
+      responce = await noteServer.GetNote(user.id);
       setNote(responce.data)
     } catch (error) {
       console.log(error)

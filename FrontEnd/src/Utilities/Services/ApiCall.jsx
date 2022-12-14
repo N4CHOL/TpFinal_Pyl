@@ -5,6 +5,7 @@ import { useState } from "react"
 const GET = `http://localhost:8000/note/note-list`
 const POST = `http://localhost:8000/note/create-note/`
 const PUT = `http://localhost:8000/note/detail-note/`
+const GET2 = `http://localhost:8000/note/consult-note/`
 
 
 
@@ -18,6 +19,21 @@ export const notegetter = async () => {
     return await fetch(GET)
 }
 
+//  Llamar notas
+export const GetNote2 = async (id) => {
+    return await axios.get(`${GET2}${id}`, {
+        headers: {
+            'authorization': ' xxxxxxxxxx',
+            'Access-Control-Allow-Origin':'*'
+
+        }
+    }
+
+    ).then(response => {
+       
+        return response
+    });
+};
 
 
 //  Llamar notas

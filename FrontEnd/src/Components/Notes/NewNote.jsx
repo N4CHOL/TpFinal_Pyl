@@ -9,12 +9,13 @@ import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from 'react-router-dom'
 import "./Note.css"
 import { SuccessToast } from '../../Utilities/Toast'
+import authService from '../../Utilities/Services/auth.service';
 function NewNote() {
 
 
   // CommonJS
   const navigate = useNavigate()
-
+  const user = authService.getCurrentUser()
   library.add(faCircleArrowLeft);
 
   const [title, setTitle] = useState("")
@@ -24,8 +25,8 @@ function NewNote() {
 
 
   const enviar = async () => {
-    if (title != "" && description != "") {
-      await PostNote({ title: title, description: description, state: state, CLOSING_DATE:date })
+    if (title != "" && description != ""&& state != "" && date != "") {
+      await PostNote({ title: title, description: description, state: state, CLOSING_DATE: date, user: user.id })
         .then(r => {
           SuccessToast("Nota Creada Correctamente")
           setTimeout(function () {

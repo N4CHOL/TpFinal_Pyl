@@ -7,7 +7,7 @@ from rest_framework.views import APIView
 # Serializers imports
 from users.serializers import (
     UserSerializer,
-    UserListSerializer
+
 )
 
 # Helper Imports
@@ -27,8 +27,8 @@ class UserApiView(APIView):
     # List
     def get(self, request):
 
-        users = User.objects.all().values('id', 'username', 'email', 'password')
-        users_serializer = UserListSerializer(users, many=True)
+        users = User.objects.all()
+        users_serializer = UserSerializer(users, many=True)
 
         return Response(data=users_serializer.data, status=status.HTTP_200_OK)
 
@@ -40,21 +40,20 @@ class UserApiView(APIView):
 
             # User
             user_serializer.save()
+
+            
+
             return Response(data=user_serializer.data, status=status.HTTP_201_CREATED)
 
         return Response(user_serializer.errors)
-
-
-
 
 
 class UserDetailApiView(APIView):
     """
     Detallar, actualizar y eliminar un usuario.
     """
-  
+
     # Validacion
-   
 
     # Detail
     def get(self, request, pk):
@@ -64,17 +63,15 @@ class UserDetailApiView(APIView):
             return Response(user_serializer.data)
         except:
             data = {
-                'message' : 'Coldnt access user data'
-                }
+                'message': 'Coldnt access user data'
+            }
         return Response(
-            data= data,
+            data=data,
             status=status.HTTP_400_BAD_REQUEST
-        )   
-        
-
-        
+        )
 
     # Update
+
     def put(self, request, pk):
         validacion, user = userExists(pk)
 

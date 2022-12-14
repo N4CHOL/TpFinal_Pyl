@@ -6,9 +6,9 @@ import * as noteServer from "../../Utilities/Services/ApiCall"
 import Swal from 'sweetalert2'
 import "./Note.css"
 import { SuccessToast } from '../../Utilities/Toast'
-
+import authService from '../../Utilities/Services/auth.service';
 function EditNote() {
-
+  const user = authService.getCurrentUser()
 
   const navigate = useNavigate()
   let { id } = useParams();
@@ -41,8 +41,8 @@ function EditNote() {
 
 
   const enviar = async () => {
-    if (title != "" && description != ""){
-    await noteServer.PutNote({ title: title, description: description,state: state, CLOSING_DATE:date },id)
+    if (title != "" && description != ""&& state != "" && date != ""){
+    await noteServer.PutNote({ title: title, description: description, state: state, CLOSING_DATE: date, user: user.id },id)
       .then(r => {
         SuccessToast("Nota Editada Correctamente")
         setTimeout(function () {
