@@ -15,8 +15,12 @@
 }
 
 .loginsub{
+    border-radius: 15px;
     margin-left: 10%;
     color: azure;
+    background-color:black;
+    width: 16%;
+  
 }
 
 .loginspan{
