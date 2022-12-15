@@ -17,7 +17,7 @@ const login = async (username, password) => {
 
     }
     ;
-    console.log(response)
+   
     return response.data;
     
 
@@ -34,7 +34,7 @@ const logout = () => {
 
 
     localStorage.removeItem("user")
-    console.log("logout")
+    
     window.location.reload()
 
 };

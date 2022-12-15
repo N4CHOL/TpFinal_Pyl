@@ -42,7 +42,7 @@ function NewNote() {
       })
     }
   }
-  console.log(state)
+  
   return (
     <>
       <h1 className='title'>Cargar Nueva Nota</h1>

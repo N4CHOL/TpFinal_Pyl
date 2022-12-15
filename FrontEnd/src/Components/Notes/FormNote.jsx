@@ -28,6 +28,7 @@ function FormNote() {
   var responce
   
   const GetNotes = async () => {
+   
     try {
       responce = await noteServer.GetNote(user.id);
       setNote(responce.data)
@@ -35,7 +36,7 @@ function FormNote() {
       console.log(error)
     }
   }
-  console.log(note)
+
 
   useEffect(() => {
     GetNotes();
@@ -49,10 +50,12 @@ function FormNote() {
       <h1 className='title'>Listado de Notas</h1>
 
       {Array.from(note).map((nota, index) => {
+      
         return (
 
-         
+       
           <Fragment key={index}>
+              {user.id == nota.user && <>
             <div className='center'><button className="button" onClick={(e) => handleClick(index)}> <h1 key={index} >{nota?.title}</h1></button></div>
 
 
@@ -94,10 +97,13 @@ function FormNote() {
               </div>
 
             </Collapse>
+               </>
+              }
+        
           </Fragment>
+          
         )
-
-
+     
 
 
       })}

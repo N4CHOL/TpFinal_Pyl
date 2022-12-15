@@ -13,7 +13,7 @@ const GET2 = `http://localhost:8000/note/consult-note/`
 // User
 
 const USERGETLIST = "http://localhost:8000/user/user-list/";
-const DELUSER = " http://127.0.0.1:8000/user/user/";
+const DELUSER = " http://localhost:8000/user/user/";
 
 export const notegetter = async () => {
     return await fetch(GET)
@@ -95,7 +95,7 @@ export const PutNote = async (data,id) => {
     }
 
     ).then(response => {
-        console.log(response)
+     
         return response
         
     });
@@ -166,8 +166,10 @@ export const PostUser = async (data) => {
 //  Delete User
 
 export const DelUser = async (id) => {
-    return await axios.delete(`${DELUSER}${id}`,
-
+    
+    var ip = DELUSER + id
+    return await axios.delete(ip,
+      
     ).then(response => {
         window.location.reload()
         return response

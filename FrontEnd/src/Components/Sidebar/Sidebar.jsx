@@ -24,7 +24,7 @@ function Sidebar() {
   const toggleMoreInfo = () => {
     setState(prevState => !prevState);
   };
-
+ console.log(id.id)
 
   const deleteacount = () => {
     Swal.fire({
@@ -37,8 +37,9 @@ function Sidebar() {
 
     }).then((result) => {
       if (result.isConfirmed) {
+        authService.logout()
         userServer.DelUser(id.id)
-
+        
       }
     })
   }
@@ -116,7 +117,7 @@ function Sidebar() {
           <Collapse in={state}>
             <div>
 
-              <button className='itemnaviconsm' onClick={(e => userServer.DelUser(id.id))}>borrar cuenta
+              <button className='itemnaviconsm' onClick={(e => deleteacount(id.id))}>borrar cuenta
 
                 
               </button>

@@ -31,7 +31,7 @@ function EditNote() {
      }
    }
 
-   console.log(note)
+   
 
    useEffect(() => {
      GetNote();

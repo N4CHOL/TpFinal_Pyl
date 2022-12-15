@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { PostUser } from '../../Utilities/Services/ApiCall'
 import { SuccessToast } from '../../Utilities/Toast'
-
+import { Alert } from "react-bootstrap"
 import "./register.css"
 function FormRegister() {
   const navigate = useNavigate()
@@ -12,12 +12,15 @@ function FormRegister() {
   const [username, setUsername] = useState("")
   const [name, setName] = useState("")
   const [surname, setSurname] = useState("")
-
+  const [error, setError] = useState(false)
   
   const [password, setPassword] = useState("")
 
   const enviar = async () => {
-    if (password != "" && username != "" && email != "") {
+    if(password != "" && username != "" && email === ""){setError(true)}
+    if(password != "" && username === "" && email != ""){setError(true)}
+    if(password == "" && username != "" && email != ""){setError(true)}
+    if (password != "" && username != "" && email != "" && error == false) {
       await PostUser({ name: name, surname: surname, email: email, username:username, password:password })
         .then(r => {
           SuccessToast("Cuenta Creada Correctamente")
@@ -26,9 +29,10 @@ function FormRegister() {
           }, 1300);
         })
     } else {
+      
       Swal.fire({
         title: 'Error!',
-        text: 'Todos los campos son obligatorios',
+        text: 'Nombre de usuario, contraseña e email son obligatorios',
         icon: 'error',
         confirmButtonText: 'Cerrar'
       })
@@ -53,6 +57,8 @@ function FormRegister() {
         
 
         <button className='buttonreg' onClick={(e)=>(enviar())}>Enviar</button>
+
+        {error == true && <><Alert variant="danger"  onClose={() => setError(false)}  dismissible>Nombre de usuario o Email ya ocupados</Alert></>}
 
     </div>
     </>

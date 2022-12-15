@@ -15,5 +15,5 @@ from users.views import (
 urlpatterns = [
 
     path('user-list/',UserApiView.as_view(), name='user'),
-    path('user/<int:pk>/',UserDetailApiView.as_view(),name='user_detail_api_view')
+    path('user/<int:pk>',UserDetailApiView.as_view(),name='user_detail_api_view')
 ]
