@@ -1,4 +1,58 @@
-Proyecto Final pyl
+PROYECTO FINAL PYL
 
-Integrantes del grupo
--Ignacio Leuca
+Integrantes del grupo: (un solo integrante)
+-Ignacio Leuca (FrontEnd + BackEnd)
+
+
+Instrucciones para correr la base de datos: (solamente si no quieres importar la base de datos del proyecto)
+- abrir XAMPP control panel
+- activar apache y msql
+- crear una base de datos llamada "notes"
+
+Instrucciones para correr el BackEnd:
+
+1- abrir una terminal nueva
+2- comando : cd BackEnd
+3- repetir paso 2 (hay que entrar a la direccion backend/backend)
+4- comando : python manage.py runserver (asegurarse de primero tener la base de datos funcionando, de otra manera no funcionara)
+
+
+Instrucciones para correr el FrontEnd:
+
+1- abrir una terminal nueva
+2- comando: cd FrontEnd
+3- comando: npm run dev
+4- abrir con ctrl + click en enlace que se muestra en la terminal para abrir el front en tu navegador 
+
+
+
+
+Pautas a tener en cuenta con el Front end
+- el front se hizo utilizando VITE y no NPX para asegurar la velocidad de la aplicacion y la compatibilidad con tecnologias modernas
+- comenzar creando una nueva cuenta o utilizar alguna de las que ese encuentran en la base de datos ej (username: admin, password: admin)
+- logearte usando esa cuenta
+- desplegar el sidebar y navegar las opciones para utilizar la aplicacion
+- si deseas borrar la cuenta adentro de la app se encuentra la opcionde borrar cuenta, esta opcion tambien borra todas tus notas asociadas
+- utilizar siempre el click para logearse ya que la app no detecta el boton enter 
+- cerrar secion si quieres cambiar de cuenta o cerrar el front para evitar errores
+
+Pautas a tener en cuenta con el Front end
+-encender XAMPP antes de correr el backend para que funcione 
+-la base de datos notes debe estar cargada
+
+
+
+dependencias utlizadas en el front-end:
+-Sweet alert
+-axios
+-font awesome
+
+dependencias utlizadas en el back-end:
+-corsheaders
+
+
+posibles bugs:
+-no crear un usuario que tenga el mismo nombre o email que otro, no esta permitido, admin ya esta tomado en la base de datos
+
+
+al momento de la entrega todo el proyecto se encuentra funcional y se a testeado sin problemas
