@@ -21,6 +21,7 @@ Instrucciones para correr el FrontEnd:
 
 1- abrir una terminal nueva
 2- comando: cd FrontEnd
+3- comando: npm i
 3- comando: npm run dev
 4- abrir con ctrl + click en enlace que se muestra en la terminal para abrir el front en tu navegador 
 
@@ -46,6 +47,12 @@ dependencias utlizadas en el front-end:
 -Sweet alert
 -axios
 -font awesome
+-reactstrap
+-react-router-dom
+-react-bootstrap
+-bootstrap
+-cors
+
 
 dependencias utlizadas en el back-end:
 -corsheaders
