@@ -1,0 +1,223 @@
+:root{
+    
+    background-color: #212529;
+}
+
+.div{
+    background-color: #212529;
+}
+
+.title{
+    
+    margin-top: 1%;
+    justify-content: center;
+    border-radius: 20px;
+   
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 70px;
+    display: flex   ;
+    background-color: aqua;
+}
+.center{
+    align-self: center;
+
+
+}
+.button{
+
+    width: 100%;
+    border: 0ch;
+    border-radius: 8px;
+    margin-top: 2%;
+    display: block;
+    transition: 1s;
+}
+.button:hover{
+    background-color: aqua;
+}
+
+.input{
+    margin-left: 15%;
+    background-color: #ced0d4;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    width: 70%;
+    border: 0ch;
+    border-radius: 4px;
+    margin-top: 0.5%;
+    display: block;
+    max-height: 22ch;
+}
+.textarea{
+    margin-left: 15%;
+    background-color: #ced0d4;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(0, 0, 0);
+    padding-bottom: 300px;
+    font-size: 30px;
+    width: 70%;
+    border: 0ch;
+    border-radius: 4px;
+    margin-top: 0.5%;
+    display: block;
+   
+}
+
+
+.form{
+    width: 100%;
+    border-radius: 10px;
+    padding-bottom: 5rem;
+    background-color: #adacac;
+}
+
+.link{
+    background-color: aqua;
+}
+
+.spantitle{
+
+    padding-right: 20px;
+    padding-right: 20px;
+    border-radius: 4px;
+    
+    margin-left: 15%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    
+    
+}
+
+.sendBtn{
+    display: block;
+    margin-top: 2%;
+    font-family: 'Roboto', sans-serif;
+    border: 0ch;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 45%;
+    background-color: aqua;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.sendBtn:hover{
+    background-color: aliceblue;
+    zoom: 1.1;
+}
+
+.boton{
+    
+    display: inline;
+    margin-top: 2%;
+    font-family: 'Roboto', sans-serif;
+    border: 0ch;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 1%;
+    background-color: aqua;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+  
+}
+.boton:hover{
+    zoom: 1.1;
+}
+
+.texdisplay{
+    
+    background-color: #ced0d4;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(0, 0, 0);
+    padding-bottom: 300px;
+    font-size: 30px;
+    width: 70%;
+    border: 0ch;
+    border-radius: 4px;
+    margin-top: 0.5%;
+    display: block;
+   
+}
+
+.col{
+    
+    flex-direction: row;
+   display: inline;
+   
+}
+
+
+.datecreate{
+    margin-left: 15%;
+    width: 25%;
+    border: 0ch;
+    
+}
+
+.selectcreate{
+    margin-top: 5px;
+    margin-left: 15%;
+    width: 25%;
+    border: 0ch;
+}
+.spancreate{
+    margin-top: 2%;
+    margin-left: 15%;
+ 
+    display: block;
+}
+.state1{
+    width: 10%;
+    display: block;
+    font-size: larger;
+    font-weight: 600;
+    border-radius: 11px;
+    padding: 10px;
+    background-color: rgba(0, 255, 136, 0.877);
+}
+.state2{
+    width: 10%;
+    display: block;
+    font-size: larger;
+    font-weight: 600;
+    border-radius: 11px;
+    padding: 10px;
+    background-color: rgba(238, 252, 39, 0.877);
+}
+.state3{
+    width: 10%;
+    display: block;
+    font-size: larger;
+    font-weight: 600;
+    border-radius: 11px;
+    padding: 10px;
+    background-color: rgba(0, 132, 255, 0.877);
+}
+.dateshow{
+   
+    font-weight: 800;
+    width: 15%;
+    padding-left: 2%;
+    border-top-right-radius: 10px;
+
+    
+    font-size: 23px;
+    display: inline-block;
+    background-color: azure;
+}
+.spanshow{
+    
+    font-weight: 800;
+    width: 13%;
+    padding-left: 1%;
+    border-bottom-left-radius: 10px;
+    font-size: 23px;
+    display: inline-block;
+    background-color: aqua;
+}

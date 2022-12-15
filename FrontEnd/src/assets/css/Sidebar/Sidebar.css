@@ -1,0 +1,103 @@
+.nav {
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    right: 100%;
+    padding: 1em;
+    height: 100%;
+    background-color: rgb(15, 15, 15);
+    
+    transform: translateX(2em);
+    transition: 0.2s transform;
+}
+
+nav:hover,
+nav:focus-within {
+    transform: translateX(100%);
+}
+
+.container {
+    overflow: hidden;
+    position: relative;
+
+
+
+
+}
+
+.item {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: black;
+    margin-left: -2ch;
+    margin-right: -1.8ch;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    background-color: aqua;
+    transition: background-color 0.3s ease-out 10ms
+}
+
+.item:hover {
+    
+    background-color: #c0bebf;
+}
+.p{
+    margin-left: -2rem;
+    margin-right: 100%;
+    background-color: bisque;
+}
+
+.slidable {
+    position: fixed;
+    top:0;
+    height: 100vh;
+    background: black;
+  
+    transition: 0.4s;
+    z-index: 1000000;
+    color:black;
+    text-align:center;
+    font-size:25px;
+    font-weight: 300;
+    color:white;
+  }
+  
+  .slidable.open{
+    left: calc(100% - 100px);
+  }
+  .itemnavicon{
+    position: absolute;
+    margin-left: 62%;
+    font-size: 30px;
+  }
+
+  .navicon{
+    position: absolute;
+    margin-left: 81%;
+    font-size: 35px;
+  }
+
+  .itemnaviconsm{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: black;
+    margin-left: -1ch;
+    margin-right: 2ch;
+    padding-left: 1.9rem;
+    padding-right: rem;
+    background-color: aqua;
+    transition: background-color 0.3s ease-out 10ms
+
+  }
+  .itemnaviconsm:hover {
+    
+    background-color: #c0bebf;
+}

@@ -1,0 +1,51 @@
+.formlog{
+    border-radius: 15px;
+    padding-bottom: 3%;
+    padding-top: 3%;
+    margin-left: 50%;
+    width: 18%;
+    background-color:black;
+}
+
+.logintitle{
+    width: 36%;
+    margin-top: 25%;
+    background-color: aqua;
+    border-radius: 8px;
+}
+
+.loginsub{
+    margin-left: 10%;
+    color: azure;
+}
+
+.loginspan{
+    
+    display: block;
+    color: azure;
+    margin-left: 6%;
+}
+.logininput{
+    margin-bottom: 8%;
+    margin-left: 6%;
+    background-color: azure;
+    border: 0ch;
+    min-width: 1ch;
+}
+.alog{
+    margin-top: 12%;
+    margin-left: 10%;
+    display: block;
+    color: aqua;
+}
+.formloguin{
+    margin-left: 50%;
+}
+.buttonlog{
+    border: 0ch;
+    margin-left:35%;
+    background-color: aqua;
+}
+.buttonlog:hover{
+    background-color: white;
+}
