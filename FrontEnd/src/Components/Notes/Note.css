@@ -1,10 +1,10 @@
 :root{
     
-    background-color: #212529;
+    background-color: #ffffff;
 }
 
 .div{
-    background-color: #212529;
+    background-color: #ffffff;
 }
 
 .title{
@@ -25,7 +25,8 @@
 
 }
 .button{
-
+    
+    background-color: #ced0d4;
     width: 100%;
     border: 0ch;
     border-radius: 8px;
